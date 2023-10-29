@@ -11,7 +11,6 @@ import path from 'path';
 const bannerGet = async (req, res) => {
   try {
     const getBanner = await getModelBanner();
-    console.log(getBanner);
     if (getBanner) {
       res.status(200).json({
         status: 200,

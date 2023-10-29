@@ -1,9 +1,10 @@
 import pg from "pg";
 
 const pool = new pg.Pool({
-  user: "postgres",
-  database: "cars",
-  password: "0614",
+  host: "rain.db.elephantsql.com",
+  user: "stqdgtjz",
+  database: "stqdgtjz",
+  password: "IcWqB6YDlDY3IiTsIwE_nHfj5IXXyt_P",
 });
 
 async function fetch(SQL, params = []) {
