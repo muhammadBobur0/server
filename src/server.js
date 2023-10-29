@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(fileUpload());
 app.use(cors());
 app.use(modules);
-app.use(express.static('uploads'));
+app.use(express.static('', 'uploads'));
 
 // APP LISTEN
 app.listen(PORT, () => console.log('http://localhost:' + PORT));
