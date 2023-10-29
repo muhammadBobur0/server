@@ -51,7 +51,6 @@ let postCar = async (req, res) => {
 
   try {
     let fileName = Date.now() + avatar.name.replace(/\s/g, "");
-    console.log(fileName);
     avatar.mv(path.resolve("uploads", fileName));
     let postCar = await createCar(title, price, color, capacity, kuzov);
 
@@ -72,7 +71,6 @@ let postCar = async (req, res) => {
 const editCar = async (req, res) => {
   let id = req.params.id;
   let { avatar } = req.files;
-  console.log(avatar.name);
   try {
     let avaName = avatar.name;
 

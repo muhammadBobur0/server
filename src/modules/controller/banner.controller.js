@@ -58,7 +58,6 @@ const bannerbyId = async (req, res) => {
 const bannerPost = async (req, res) => {
   let { name } = req.files.img;
 
-  console.log(name);
 
   if (!name) {
     return res.status(404).json({
@@ -75,11 +74,12 @@ const bannerPost = async (req, res) => {
   try {
 
     let fileName = Date.now() + name.replace(/\s/g, "");
-    console.log(fileName);
     req.files.img.mv(path.resolve("uploads", fileName));
 
+    console.log(path.join('uploads'));
+    console.log(path.resolve("uploads"));
+
     let [createBanner] = await postModelBanner(req.body.title, name);
-    console.log(createBanner);
     if (createBanner) {
       res.status(201).json({
         status: 201,
